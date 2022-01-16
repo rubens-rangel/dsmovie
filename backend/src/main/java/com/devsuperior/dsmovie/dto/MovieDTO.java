@@ -11,6 +11,7 @@ public class MovieDTO {
     private String image;
 
     public MovieDTO() {
+
     }
 
     public MovieDTO(Long id, String title, Double score, Integer count, String image) {
@@ -20,13 +21,12 @@ public class MovieDTO {
         this.count = count;
         this.image = image;
     }
-
-    public MovieDTO(Movie movie) {
-        id = movie.getId();
-        title = movie.getTitle();
-        score = movie.getScore();
-        count = movie.getCount();
-        image = movie.getImage();
+    public MovieDTO(Movie entity) {
+        id = entity.getId();
+        title = entity.getTitle();
+        score = entity.getScore();
+        count = entity.getCount();
+        image = entity.getImage();
     }
 
     public Long getId() {
@@ -68,4 +68,5 @@ public class MovieDTO {
     public void setImage(String image) {
         this.image = image;
     }
+
 }

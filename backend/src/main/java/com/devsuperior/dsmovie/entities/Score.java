@@ -11,7 +11,7 @@ public class Score implements Serializable {
     public static final long serialVersionUID = 1L;
 
     @EmbeddedId
-    private Scorepk id = new Scorepk();
+    private ScorePK id = new ScorePK();
 
     private Double value;
 
@@ -26,11 +26,11 @@ public class Score implements Serializable {
         id.setUser(user);
     }
 
-    public Scorepk getId() {
+    public ScorePK getId() {
         return id;
     }
 
-    public void setId(Scorepk id) {
+    public void setId(ScorePK id) {
         this.id = id;
     }
 

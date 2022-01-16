@@ -8,8 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tb_movie")
-public class Movie implements Serializable {
-    public static final long serialVersionUID = 1L;
+public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,15 +22,30 @@ public class Movie implements Serializable {
     private Set<Score> scores = new HashSet<>();
 
     public Movie() {
+
     }
 
+
+
     public Movie(Long id, String title, Double score, Integer count, String image) {
+        super();
         this.id = id;
         this.title = title;
         this.score = score;
         this.count = count;
         this.image = image;
     }
+
+
+    public Integer getCount() {
+        return count;
+    }
+
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
 
     public Long getId() {
         return id;
@@ -57,14 +71,6 @@ public class Movie implements Serializable {
         this.score = score;
     }
 
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
     public String getImage() {
         return image;
     }
@@ -77,16 +83,5 @@ public class Movie implements Serializable {
         return scores;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Movie movie = (Movie) o;
-        return Objects.equals(id, movie.id);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }
