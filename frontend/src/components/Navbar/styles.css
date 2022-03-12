@@ -30,7 +30,13 @@ align-items: center;
 }
 
 .moviestars-title{
-    color: rgb(255, 251, 0);
-    font-family: arial, sans-serif;
-
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+    letter-spacing: 6px;
+    line-height: 150%;
+    perspective: 400px;
+    text-align: justify;
 }
